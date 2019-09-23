@@ -8,7 +8,10 @@
   <link
     href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:700|Merriweather:700,700italic'
     rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/index.css">
+
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -26,10 +29,12 @@
                 <a class="nav-link" href="#"> About <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Delays/Alerts</a>
+                <a class="nav-link" href="#"> Tweets </a>
+              </li>
+              <a class="nav-link" href="#"> Map </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> FAQs</a>
+               
 
 
                 
@@ -37,26 +42,48 @@
             </ul>
           </div>
         </nav>
+      </header>
 
   <div class="question">
-    <h1> Is my train running? </h1>
+   
+  </div>
+  <div class='header'>
+      <h1> Is my train running? </h1>
   </div>
 <div>
-<h2> Select Your Subway Line </h2>
 
-</div>
+ <a class="twitter-timeline" data-height="300" data-link-color="#2B7BB9" href="https://twitter.com/NYCTSubway?ref_src=twsrc%5Etfw">Tweets by NYCTSubway</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <div id="map"></div>
 
-  <footer>
-    <div class="wrapper">
-      © 2019 Olivia Chavez  . Made in NY.
-    </div>
-  </footer>
+  
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
   </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI4XQ98SdY--ZQRn1Sfgjw4zmqdH-dg-0&callback=initMap">
+</script>
+
+<script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: {lat: 40.730610, lng: -73.935242}
+      });
+      var transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+    }
+  </script>
+
+<footer>
+    <div class="wrapper">
+      © 2019 Olivia Chavez. Made in NY.
+    </div>
+  </footer>
+
+
 </body>
 
 </html>
